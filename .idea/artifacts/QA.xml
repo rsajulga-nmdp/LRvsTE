@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="QA">
+    <output-path>$PROJECT_DIR$/out/artifacts/QA</output-path>
+    <root id="archive" name="QA.jar">
+      <element id="module-output" name="LRvsTE" />
+    </root>
+  </artifact>
+</component>
