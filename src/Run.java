@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by wwang on 8/28/16.
+ * Created by wwang
  */
 public class Run {
     public static void main(String[] args) {
@@ -25,10 +25,10 @@ public class Run {
             e.printStackTrace();
         }
 
-        QaCalculator qc = new QaCalculator();
+        QaCalculator qc = new QaCalculator(folder.getName());
         for (int i = 0; i < inputList.length; i++) {
             String fileNameFull = inputList[i].getName().toLowerCase();
-            if (fileNameFull.contains("hml") || fileNameFull.contains("xml")) {
+            if (fileNameFull.contains("hml") || fileNameFull.contains("xml") || fileNameFull.contains("txt")) {
                 try {
                     qc.run(inputList[i], pw);
                 } catch (IOException | SAXException |ParserConfigurationException e) {
@@ -37,9 +37,10 @@ public class Run {
             }
         }
         pw.close();
-        System.out.println("TE: "+ (int)qc.count);
-        System.out.println("LR: "+ (qc.total- (int)qc.count));
-        System.out.println("TE Rate: "+qc.getQa());
+        System.out.println("Finished!");
+        //System.out.println("TE: "+ (int)qc.count);
+        //System.out.println("LR: "+ (qc.total- (int)qc.count));
+        //System.out.println("TE Rate: "+qc.getQa());
     }
 
 }
